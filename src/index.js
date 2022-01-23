@@ -22,7 +22,10 @@ function onSearchBox() {
     };
 
   fetchCountries(boxName)
-    .then(countries => {
+      .then(countries => {
+        
+          console.log(countries);
+          
       refs.countryList.innerHTML = ''
       refs.countryInfo.innerHTML = ''
       if (countries.length === 1) {
