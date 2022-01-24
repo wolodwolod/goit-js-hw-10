@@ -13,10 +13,8 @@ export function renderCountrysList(countries) {
   return markup
 };
 
-export function renderCountryInfo(countries) {
-  const markup = countries
-    .map(({ name, flags, capital, population, languages }) => {
-        return `
+export function renderCountryInfo({ name, flags, capital, population, languages }) {
+  const markup = `
       <div class="country-list__item">
       <img class="country-list__flag" src="${flags.svg}" alt="Flag of ${name.official}" width = 40px>
               <h1 class="country-list__name">${name.official}</h1>
@@ -27,8 +25,7 @@ export function renderCountryInfo(countries) {
             <li class="country-info__item"><p><b>Population: </b>${population}</p></li>
             <li class="country-info__item"><p><b>Languages: </b>${Object.values(languages).join(', ')}</p></li>
         </ul>
-        `
-    })
-    .join('')
+        `;
+    
   return markup
 }

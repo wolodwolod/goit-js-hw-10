@@ -4,7 +4,6 @@ import Notiflix from 'notiflix'
 import { fetchCountries } from './js/fetchCountries'
 import { renderCountrysList, renderCountryInfo  } from './js/renderHtml'
 
-
 const DEBOUNCE_DELAY = 300;
 
 const refs = {
