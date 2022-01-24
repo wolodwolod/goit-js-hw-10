@@ -24,23 +24,20 @@ function onSearchBox() {
 
   fetchCountries(boxName)
       .then(countries => {
-        
-          console.log(countries);
-          
+                          
         refs.countryList.innerHTML = '';
         refs.countryInfo.innerHTML = '';
 
       if (countries.length === 1) {
-          // refs.countryList.insertAdjacentHTML('beforeend', renderCountrysList(countries));
-          //   refs.countryList.classList.add('big-name');
-          refs.countryInfo.insertAdjacentHTML('beforeend', renderCountryInfo(countries));
-        
+         
+        refs.countryInfo.insertAdjacentHTML('beforeend', renderCountryInfo(countries));
+                
       } else if (countries.length >= 10) {
         alertTooManyMatches()
+        
       } else {
           refs.countryList.insertAdjacentHTML('beforeend', renderCountrysList(countries));
-          // refs.countryList.classList.remove('big-name');
-      }
+                }
     })
     .catch(alertWrongName)
 }
